@@ -60,14 +60,30 @@
 			children = (
 				E9ED7E3821D79B1800F8D11A /* .gitignore */,
 				E9ED7E2621D7969600F8D11A /* AppDelegate.swift */,
-				E9ED7E3A21D79BAF00F8D11A /* EateriesTableViewController.swift */,
-				E9ED7E2A21D7969600F8D11A /* Main.storyboard */,
-				E9ED7E3C21D7A0D700F8D11A /* EateriesTableViewCell.swift */,
+				E9ED7E3E21D7A53300F8D11A /* ViewController */,
+				E9ED7E3F21D811CC00F8D11A /* Storyboard */,
 				E9ED7E2D21D7969700F8D11A /* Assets.xcassets */,
-				E9ED7E2F21D7969700F8D11A /* LaunchScreen.storyboard */,
 				E9ED7E3221D7969700F8D11A /* Info.plist */,
 			);
 			path = Eateries;
+			sourceTree = "<group>";
+		};
+		E9ED7E3E21D7A53300F8D11A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9ED7E3A21D79BAF00F8D11A /* EateriesTableViewController.swift */,
+				E9ED7E3C21D7A0D700F8D11A /* EateriesTableViewCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E9ED7E3F21D811CC00F8D11A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E9ED7E2A21D7969600F8D11A /* Main.storyboard */,
+				E9ED7E2F21D7969700F8D11A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

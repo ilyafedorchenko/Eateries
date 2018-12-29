@@ -10,7 +10,7 @@ import UIKit
 
 class EateriesTableViewCell: UITableViewCell {
 
-  @IBOutlet weak var thmbnailImageView: UIImageView!
+  @IBOutlet weak var thumbnailImageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var locationName: UILabel!
   @IBOutlet weak var typeName: UILabel!
