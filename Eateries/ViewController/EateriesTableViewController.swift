@@ -14,6 +14,8 @@ class EateriesTableViewController: UITableViewController {
   
   let restaurantImages = ["ogonek", "elu", "bonsai", "dastarhan", "indokitay", "x.o", "balkan", "respublika", "speakeasy", "morris", "istorii", "klassik", "love", "shok", "bochka"]
   
+  var restaurantIsVisited = [Bool](repeatElement(false, count: 15))
+  
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,21 +43,32 @@ class EateriesTableViewController: UITableViewController {
       cell.thumbnailImageView.clipsToBounds = true
       cell.nameLabel.text = restaurantNames[indexPath.row]
       
-      
+      cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
 
         return cell
     }
   
-  func showAlert(index: Int) {
+  func showAlert(indexPath: IndexPath, table: UITableView) {
     let ac = UIAlertController(title: nil, message: "Choose action", preferredStyle: .actionSheet)
+    
+    let isVisitedTitle = restaurantIsVisited[indexPath.row] ? "I was not here" : "I was here"
+    
+    let isVisited = UIAlertAction(title: isVisitedTitle, style: .default) {_ in
+      let cell = table.cellForRow(at: indexPath)
+      self.restaurantIsVisited[indexPath.row].toggle()
+      cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .checkmark : .none
+    }
+    
     let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    let call = UIAlertAction(title: "Call: +7(495)111-111\(index)", style: .default, handler: {_ in
+    
+    let call = UIAlertAction(title: "Call: +7(495)111-111\(indexPath.row)", style: .default) {_ in
       let ac = UIAlertController(title: nil, message: "Phone call unavailable", preferredStyle: .alert)
       let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
       ac.addAction(ok)
       self.present(ac, animated: true, completion: nil)
-    })
+    }
     
+    ac.addAction(isVisited)
     ac.addAction(cancel)
     ac.addAction(call)
     
@@ -63,7 +76,9 @@ class EateriesTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    showAlert(index: indexPath.row)
+    showAlert(indexPath: indexPath, table: tableView)
+    
+    tableView.deselectRow(at: indexPath, animated: true)
     
   }
   
