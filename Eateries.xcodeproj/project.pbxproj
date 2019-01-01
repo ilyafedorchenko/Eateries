@@ -14,6 +14,7 @@
 		E9ED7E3921D79B1800F8D11A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E9ED7E3821D79B1800F8D11A /* .gitignore */; };
 		E9ED7E3B21D79BAF00F8D11A /* EateriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED7E3A21D79BAF00F8D11A /* EateriesTableViewController.swift */; };
 		E9ED7E3D21D7A0D700F8D11A /* EateriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED7E3C21D7A0D700F8D11A /* EateriesTableViewCell.swift */; };
+		E9ED7E4121D99A9A00F8D11A /* EateryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED7E4021D99A9A00F8D11A /* EateryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E9ED7E3821D79B1800F8D11A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E9ED7E3A21D79BAF00F8D11A /* EateriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewController.swift; sourceTree = "<group>"; };
 		E9ED7E3C21D7A0D700F8D11A /* EateriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewCell.swift; sourceTree = "<group>"; };
+		E9ED7E4021D99A9A00F8D11A /* EateryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				E9ED7E3A21D79BAF00F8D11A /* EateriesTableViewController.swift */,
 				E9ED7E3C21D7A0D700F8D11A /* EateriesTableViewCell.swift */,
+				E9ED7E4021D99A9A00F8D11A /* EateryDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				E9ED7E2721D7969600F8D11A /* AppDelegate.swift in Sources */,
 				E9ED7E3B21D79BAF00F8D11A /* EateriesTableViewController.swift in Sources */,
+				E9ED7E4121D99A9A00F8D11A /* EateryDetailViewController.swift in Sources */,
 				E9ED7E3D21D7A0D700F8D11A /* EateriesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4A5572G2V;
 				INFOPLIST_FILE = Eateries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -324,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4A5572G2V;
 				INFOPLIST_FILE = Eateries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
