@@ -28,6 +28,10 @@ class EateriesTableViewController: UITableViewController {
     Restaurant(name: "Бочка", type: "ресторан", location: "Уфа", image: "bochka", isVisited: false)
   ]
   
+  @IBAction func close(segue:UIStoryboardSegue) {
+    
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.hidesBarsOnSwipe = true
   }
