@@ -10,8 +10,17 @@ import UIKit
 
 class EateryDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+  @IBOutlet weak var rateButton: UIButton!
+  @IBOutlet weak var mapButton: UIButton!
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var tableView: UITableView!
+
+  @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+    guard let svc = segue.source as? RateViewController else { return }
+    guard let rating = svc.restRating else { return }
+    rateButton.setImage(UIImage(named: rating), for: .normal)
+  }
+  
   var restaurant: Restaurant?
   
   override func viewWillAppear(_ animated: Bool) {
@@ -22,9 +31,18 @@ class EateryDetailViewController: UIViewController, UITableViewDataSource, UITab
   override func viewDidLoad() {
         super.viewDidLoad()
     
+    let buttons = [rateButton, mapButton]
+    for button in buttons {
+      guard let button = button else {break}
+      button.layer.cornerRadius = 5
+      button.layer.borderWidth = 1
+      button.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    tableView.estimatedRowHeight = 38
+    tableView.rowHeight = UITableView.automaticDimension
+    
     imageView.image = UIImage(named: restaurant!.image)
-//    tableView.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
-//    tableView.separatorColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
     tableView.tableFooterView = UIView(frame: CGRect.zero)
     title = restaurant!.name
     
@@ -63,15 +81,10 @@ class EateryDetailViewController: UIViewController, UITableViewDataSource, UITab
     tableView.deselectRow(at: indexPath, animated: true)
   }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "mapSegue" {
+      let dvc = segue.destination as! MapViewController
+      dvc.restaurant = restaurant
     }
-    */
-
+  }
 }

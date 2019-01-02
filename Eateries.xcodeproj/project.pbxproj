@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E90F471421DBC07D0082A005 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90F471321DBC07D0082A005 /* Restaurant.swift */; };
 		E90F471721DBD1220082A005 /* EateryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90F471621DBD1220082A005 /* EateryDetailTableViewCell.swift */; };
+		E90F471921DC27590082A005 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90F471821DC27590082A005 /* RateViewController.swift */; };
+		E90F471B21DC43680082A005 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90F471A21DC43680082A005 /* MapViewController.swift */; };
+		E90F471E21DC43D60082A005 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90F471D21DC43D60082A005 /* MapKit.framework */; };
 		E9ED7E2721D7969600F8D11A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED7E2621D7969600F8D11A /* AppDelegate.swift */; };
 		E9ED7E2C21D7969600F8D11A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9ED7E2A21D7969600F8D11A /* Main.storyboard */; };
 		E9ED7E2E21D7969700F8D11A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED7E2D21D7969700F8D11A /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		E90F471321DBC07D0082A005 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E90F471621DBD1220082A005 /* EateryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		E90F471821DC27590082A005 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		E90F471A21DC43680082A005 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E90F471D21DC43D60082A005 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E9ED7E2321D7969600F8D11A /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ED7E2621D7969600F8D11A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9ED7E2B21D7969600F8D11A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90F471E21DC43D60082A005 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +60,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E90F471C21DC43D60082A005 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E90F471D21DC43D60082A005 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E9ED7E1A21D7969600F8D11A = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +76,7 @@
 				E90F471521DBC0ED0082A005 /* Model */,
 				E9ED7E2521D7969600F8D11A /* Eateries */,
 				E9ED7E2421D7969600F8D11A /* Products */,
+				E90F471C21DC43D60082A005 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +106,8 @@
 				E9ED7E3C21D7A0D700F8D11A /* EateriesTableViewCell.swift */,
 				E9ED7E4021D99A9A00F8D11A /* EateryDetailViewController.swift */,
 				E90F471621DBD1220082A005 /* EateryDetailTableViewCell.swift */,
+				E90F471A21DC43680082A005 /* MapViewController.swift */,
+				E90F471821DC27590082A005 /* RateViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -135,6 +153,11 @@
 				TargetAttributes = {
 					E9ED7E2221D7969600F8D11A = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -181,6 +204,8 @@
 				E9ED7E3B21D79BAF00F8D11A /* EateriesTableViewController.swift in Sources */,
 				E9ED7E4121D99A9A00F8D11A /* EateryDetailViewController.swift in Sources */,
 				E9ED7E3D21D7A0D700F8D11A /* EateriesTableViewCell.swift in Sources */,
+				E90F471921DC27590082A005 /* RateViewController.swift in Sources */,
+				E90F471B21DC43680082A005 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,11 +11,11 @@ import UIKit
 class EateriesTableViewController: UITableViewController {
   
   var restaurants: [Restaurant] = [
-    Restaurant(name: "Ogonek Grill&Bar", type: "ресторан", location: "Уфа", image: "ogonek", isVisited: false),
-    Restaurant(name: "Елу", type: "ресторан", location: "Уфа", image: "elu", isVisited: false),
-    Restaurant(name: "Bonsai", type: "ресторан", location: "Уфа", image: "bonsai", isVisited: false),
-    Restaurant(name: "Дастархан", type: "ресторан", location: "Уфа", image: "dastarhan", isVisited: false),
-    Restaurant(name: "Индокитай", type: "ресторан", location: "Уфа", image: "indokitay", isVisited: false),
+    Restaurant(name: "Ogonek Grill&Bar", type: "ресторан", location: "Уфа, бульвар Хадии Давлетшиной, д.21", image: "ogonek", isVisited: false),
+    Restaurant(name: "Елу", type: "ресторан", location: "1 Infinite Loop, Cupertino, CA", image: "elu", isVisited: false),
+    Restaurant(name: "Bonsai", type: "ресторан", location: "Ufa", image: "bonsai", isVisited: false),
+    Restaurant(name: "Дастархан", type: "ресторан", location: "Moscow", image: "dastarhan", isVisited: false),
+    Restaurant(name: "Индокитай", type: "ресторан", location: "Москва", image: "indokitay", isVisited: false),
     Restaurant(name: "X.O", type: "ресторан-клуб", location: "Уфа", image: "x.o", isVisited: false),
     Restaurant(name: "Балкан Гриль", type: "ресторан", location: "Уфа", image: "balkan", isVisited: false),
     Restaurant(name: "Respublica", type: "ресторан", location: "Уфа", image: "respublika", isVisited: false),
@@ -35,6 +35,8 @@ class EateriesTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    tableView.estimatedRowHeight = 85
+    tableView.rowHeight = UITableView.automaticDimension
     self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     
     
@@ -59,7 +61,10 @@ class EateriesTableViewController: UITableViewController {
     cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
     cell.thumbnailImageView.layer.cornerRadius = 32.5
     cell.thumbnailImageView.clipsToBounds = true
+    
     cell.nameLabel.text = restaurants[indexPath.row].name
+    cell.locationLabel.text = restaurants[indexPath.row].location
+    cell.typeLabel.text = restaurants[indexPath.row].type
     
     cell.accessoryType = restaurants[indexPath.row].isVisited ? .checkmark : .none
     
